@@ -1,7 +1,15 @@
 export const SearchBar = ({ onSubmit }) => {
+  const handleSubmit = e => {
+    e.preventDefault();
+    const value = e.target.elements.query.value.trim().toLowerCase();
+
+    onSubmit(value);
+    e.target.reset();
+  };
+
   return (
     <header>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="query"

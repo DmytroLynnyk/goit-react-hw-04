@@ -1,24 +1,25 @@
-import { axios } from 'axios';
+import axios from 'axios';
 
 const API_KEY = 'ZRjaoBiorU5Ti5slFrRb5FFbTfF1378SFylgNETheGw';
-const SECRET_KEY = 'bMKHlWUnSAaFuHzfRCzIRZb0LmGcw9yjBHZOO9ZGX_w';
 
-axios.defaults.baseURL = 'https://api.unsplash.com/photos/';
-axios.defaults.headers.common['Autorization'] = API_KEY;
+axios.defaults.baseURL = 'https://api.unsplash.com/search/photos/';
+// axios.defaults.headers.common['Autorization'] = API_KEY;
 axios.defaults.params = {
   orientation: 'landscape',
   per_page: 10,
 };
 
 export const getPhotos = async (query, page) => {
-  const { data } = await axios.get(`search?query=${query}&page=${page}`);
+  const { data } = await axios.get(
+    `?client_id=${API_KEY}&query=${query}&page=${page}`
+  );
 
-  const normalizeData = data.url.map(({ small, regular }) => ({
-    small: small,
-    regular: regular,
-  }));
+  // const normalizeData = data.url.map(({ small, regular }) => ({
+  //   small: small,
+  //   regular: regular,
+  // }));
 
-  return { data: normalizeData };
+  return { data };
 };
 
 [
