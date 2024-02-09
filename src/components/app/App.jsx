@@ -7,6 +7,20 @@ import { SearchBar } from '../searchBar/SearchBar';
 import { Loader } from '../Loader/Loader';
 import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
 import { LoadMoreBtn } from '../LoadMoreBtn/LoadMoreBtn';
+import Modal from 'react-modal';
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+  },
+};
+
+Modal.setAppElement('#root');
 
 export const App = () => {
   const [query, setQuery] = useState('');
@@ -48,12 +62,15 @@ export const App = () => {
     <>
       <SearchBar onSubmit={onSubmit} photos={photos} />
       <Toaster position="top-left" reverseOrder={false} />
+
       <ImageGallery photos={photos} />
+
       {photos.length < totalResults && (
         <LoadMoreBtn onClick={onClick}>Load more</LoadMoreBtn>
       )}
 
       {isLoading && <Loader />}
+
       {isError && (
         <ErrorMessage>
           Oops, something went wrong. Try again later...
