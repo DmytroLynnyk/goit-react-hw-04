@@ -1,6 +1,6 @@
-import { ImageCard } from '../imagecard/ImageCard';
+import { ImageCard } from '../ImageCard/ImageCard';
 
-export const ImageGallery = photos => {
+export const ImageGallery = ({ photos }) => {
   return (
     <ul>
       {photos.map(photo => (

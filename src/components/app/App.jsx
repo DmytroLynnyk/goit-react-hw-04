@@ -1,8 +1,8 @@
 import toast, { Toaster } from 'react-hot-toast';
-import { SearchBar } from '../searchBar/SearchBar';
+import { SearchBar } from '../SearchBar/SearchBar';
 import './App.css';
 import { useState, useEffect } from 'react';
-import { ImageGallery } from '../imagegallery/ImageGallery';
+import { ImageGallery } from '../ImageGallery/ImageGallery';
 import { getPhotos } from '../../apiService/photos';
 
 export const App = () => {
@@ -21,16 +21,16 @@ export const App = () => {
     if (!query) return;
     getPhotos(query, page)
       .then(resp => {
-        setPhotos(resp.data.results);
+        setPhotos(oldPhotos => [...oldPhotos, ...resp.data.results]);
       })
       .catch(err => console.log(err));
   }, [query, page]);
 
   return (
     <>
-      <SearchBar onSubmit={onSubmit} />
+      <SearchBar onSubmit={onSubmit} photos={photos} />
       <Toaster position="top-left" reverseOrder={false} />
-      {/* <ImageGallery photos={photos} /> */}
+      <ImageGallery photos={photos} />
     </>
   );
 };
