@@ -11,14 +11,13 @@ export const ImageCard = ({ small, alt, regular }) => {
   return (
     <div>
       <img src={small} alt={alt} onClick={openModal} />
-      {modalIsOpen && (
-        <ImageModal
-          alt={alt}
-          regular={regular}
-          setIsOpen={setIsOpen}
-          modalIsOpen={modalIsOpen}
-        />
-      )}
+
+      <ImageModal
+        alt={alt}
+        regular={regular}
+        setIsOpen={setIsOpen}
+        modalIsOpen={modalIsOpen}
+      />
     </div>
   );
 };
