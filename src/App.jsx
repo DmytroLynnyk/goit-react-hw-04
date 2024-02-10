@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { useState, useEffect } from 'react';
 import './App.css';
 // import { ImageGallery } from './components/ImageGallery/ImageGallery.jsx';
+import { ImageGallery } from './components/ImageGallery/ImageGallery';
 import { getPhotos } from './apiService/photos';
 import { SearchBar } from './components/searchBar/SearchBar';
 import { Loader } from './components/Loader/Loader';
@@ -51,6 +52,7 @@ export const App = () => {
       <SearchBar onSubmit={onSubmit} photos={photos} />
       <Toaster position="top-left" reverseOrder={false} />
       {/* <ImageGallery photos={photos} /> */}
+      <ImageGallery photos={photos} />
       {photos.length < totalResults && (
         <LoadMoreBtn onClick={onClick}>Load more</LoadMoreBtn>
       )}
