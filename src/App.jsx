@@ -2,10 +2,9 @@ import toast, { Toaster } from 'react-hot-toast';
 import Modal from 'react-modal';
 import { useState, useEffect } from 'react';
 import './App.css';
-// import { ImageGallery } from './components/ImageGallery/ImageGallery.jsx';
 import { ImageGallery } from './components/ImageGallery/ImageGallery';
 import { getPhotos } from './apiService/photos';
-import { SearchBar } from './components/searchBar/SearchBar';
+import { SearchBar } from './components/SearchBar/SearchBar';
 import { Loader } from './components/Loader/Loader';
 import { ErrorMessage } from './components/ErrorMessage/ErrorMessage';
 import { LoadMoreBtn } from './components/LoadMoreBtn/LoadMoreBtn';
@@ -51,7 +50,6 @@ export const App = () => {
     <>
       <SearchBar onSubmit={onSubmit} photos={photos} />
       <Toaster position="top-left" reverseOrder={false} />
-      {/* <ImageGallery photos={photos} /> */}
       <ImageGallery photos={photos} />
       {photos.length < totalResults && (
         <LoadMoreBtn onClick={onClick}>Load more</LoadMoreBtn>
