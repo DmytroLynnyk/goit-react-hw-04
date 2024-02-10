@@ -2,12 +2,12 @@ import toast, { Toaster } from 'react-hot-toast';
 import Modal from 'react-modal';
 import { useState, useEffect } from 'react';
 import './App.css';
-import { ImageGallery } from '../ImageGallery/ImageGallery';
-import { getPhotos } from '../../apiService/photos';
-import { SearchBar } from '../SearchBar/SearchBar';
-import { Loader } from '../Loader/Loader';
-import { ErrorMessage } from '../ErrorMessage/ErrorMessage';
-import { LoadMoreBtn } from '../LoadMoreBtn/LoadMoreBtn';
+import { ImageGallery } from './components/ImageGallery/ImageGallery';
+import { getPhotos } from './apiService/photos';
+import { SearchBar } from './components/SearchBar/SearchBar';
+import { Loader } from './components/Loader/Loader';
+import { ErrorMessage } from './components/ErrorMessage/ErrorMessage';
+import { LoadMoreBtn } from './components/LoadMoreBtn/LoadMoreBtn';
 
 Modal.setAppElement('#root');
 
