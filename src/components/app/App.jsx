@@ -32,8 +32,8 @@ export const App = () => {
     setIsLoading(true);
     getPhotos(query, page)
       .then(resp => {
-        setTotalResults(resp.data.total);
-        setPhotos(oldPhotos => [...oldPhotos, ...resp.data.results]);
+        setTotalResults(resp.totalPhotos);
+        setPhotos(oldPhotos => [...oldPhotos, ...resp.photos]);
       })
       .catch(err => {
         console.log(err.message);

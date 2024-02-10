@@ -2,7 +2,7 @@ import css from './ImageCard.module.css';
 import { useState } from 'react';
 import { ImageModal } from '../ImageModal/ImageModal';
 
-export const ImageCard = ({ small, alt, regular }) => {
+export const ImageCard = ({ photo: { small, alt, regular } }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
