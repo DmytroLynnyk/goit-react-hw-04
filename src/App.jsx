@@ -2,7 +2,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import Modal from 'react-modal';
 import { useState, useEffect } from 'react';
 import './App.css';
-import { ImageGallery } from './components/ImageGallery/ImageGallery';
+import { ImageGallery } from './components/ImageGallery/ImageGallery.jsx';
 import { getPhotos } from './apiService/photos';
 import { SearchBar } from './components/searchBar/SearchBar';
 import { Loader } from './components/Loader/Loader';
