@@ -1,3 +1,5 @@
+import css from './SearchBar.module.css';
+
 export const SearchBar = ({ onSubmit }) => {
   const handleSubmit = e => {
     e.preventDefault();

@@ -1,8 +1,9 @@
+import css from './ImageGallery.module.css';
 import { ImageCard } from '../ImageCard/ImageCard';
 
 export const ImageGallery = ({ photos }) => {
   return (
-    <ul>
+    <ul className={css.gallery}>
       {photos.map(photo => {
         // the point of destruct of the photo, need to be done during fetching
         const { small, regular, alt_description: alt } = photo.urls;

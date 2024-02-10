@@ -1,3 +1,4 @@
+import css from './ImageCard.module.css';
 import { useState } from 'react';
 import { ImageModal } from '../ImageModal/ImageModal';
 
@@ -9,8 +10,13 @@ export const ImageCard = ({ small, alt, regular }) => {
   }
 
   return (
-    <div>
-      <img src={small} alt={alt} onClick={openModal} />
+    <div className={css.card}>
+      <img
+        className={css.cardImage}
+        src={small}
+        alt={alt}
+        onClick={openModal}
+      />
 
       <ImageModal
         alt={alt}
