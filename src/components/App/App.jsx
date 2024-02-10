@@ -47,7 +47,7 @@ export const App = () => {
   };
 
   return (
-    <>
+    <div>
       <SearchBar onSubmit={onSubmit} photos={photos} />
       <Toaster position="top-left" reverseOrder={false} />
       <ImageGallery photos={photos} />
@@ -60,6 +60,6 @@ export const App = () => {
           Oops, something went wrong. Try again later...
         </ErrorMessage>
       )}
-    </>
+    </div>
   );
 };
