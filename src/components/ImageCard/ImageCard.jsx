@@ -5,9 +5,9 @@ import { ImageModal } from '../ImageModal/ImageModal';
 export const ImageCard = ({ photo: { small, alt, regular } }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
-  function openModal() {
+  const openModal = () => {
     setIsOpen(true);
-  }
+  };
 
   return (
     <div className={css.card}>
@@ -18,12 +18,14 @@ export const ImageCard = ({ photo: { small, alt, regular } }) => {
         onClick={openModal}
       />
 
-      <ImageModal
-        alt={alt}
-        regular={regular}
-        setIsOpen={setIsOpen}
-        modalIsOpen={modalIsOpen}
-      />
+      {modalIsOpen && (
+        <ImageModal
+          alt={alt}
+          regular={regular}
+          setIsOpen={setIsOpen}
+          modalIsOpen={modalIsOpen}
+        />
+      )}
     </div>
   );
 };
